@@ -5,7 +5,7 @@ public class Asiento {
 	
 	//ATRIBUTOS
 	private String id;
-	private char l;
+	
 	private boolean ocupado;
 	//protected Asiento asientos[][]=new Asiento[8][9];
 	

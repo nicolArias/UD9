@@ -13,8 +13,9 @@ public class Espectador {
 	private int edad;
 	private String nombre;
 	private double cantDinero;
+	private String puesto;
 	
-	private Asiento asiento;
+	
 
 		
 	
@@ -23,6 +24,7 @@ public class Espectador {
 		randomNom();
 		this.edad=EDAD_CONST;
 		this.cantDinero=DINERO_CONST;
+		this.puesto="";
 	}
 
 	//MÉTODO QUE GENERA UN NOMBRE RANDOM
@@ -56,15 +58,18 @@ public class Espectador {
 	public void setCantDinero(double cantDinero) {
 		this.cantDinero = cantDinero;
 	}
-	public Asiento getAsiento() {
-		return asiento;
+
+	public String getPuesto() {
+		return puesto;
 	}
+
+	public void setPuesto(String puesto) {
+		this.puesto = puesto;
+	}
+
 
 	
-	public void setAsiento(Asiento asiento) {
-		this.asiento = asiento;
-	}
-
+	
 		
 		
 	
