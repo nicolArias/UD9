@@ -80,22 +80,31 @@ public class Cine {
 				fila--;	
 			}
 			
-			//imprimir();
 		}
 		
-		/*public void imprimir() {
-			for(int i=0;i<FILA;i++) {
-				for(int j=0;j<COL;j++) {
-					System.out.println(sala[i][j].getId());
-				}
-			}
-		}*/
+		
+	public boolean validaciones() {
+			
+		if(esp.getCantDinero()>=precioEntrada && esp.getEdad()>=pelicula.getEdadMinima()) {
+			return true;
+		}
+		return false;
+	}
+			
+	public String obtenerIdSilla() {
+		//Random r=new Random();
+		int nF=r.nextInt(8);	
+		int nC=r.nextInt(9);
+				
+		String id=sala[nF][nC].getId();
+		return id;
+	}
 		
 	public void llenarSalaAut() {
 			//Variable 'cantEs' es para guardar el número aleatorio de los espectadores que vamos a sentar
 			int cantEs=r.nextInt(72)+1;
 			int cont=0;
-			
+	
 			while(cont<cantEs) {
 				for(int i=0;i<FILA;i++) {
 					for(int j=0;j<COL;j++) {
@@ -106,42 +115,22 @@ public class Cine {
 								espArray.add(esp);
 								sala[i][j].setOcupado(true);
 								cont++;
-							}else {
-								vista.noPuestos();
+								
 							}
 						}else {
 							cont=cont;
-							vista.noCumpleRequisitos();
+							
 						}
 					}	
 				}
 			}
-			
-			
-						
-		}
-	
-	public boolean validaciones() {
-		
-		if(esp.getCantDinero()>=precioEntrada && esp.getEdad()>=pelicula.getEdadMinima()) {
-			return true;
-		}
-		return false;
 	}
-		
-	public String obtenerIdSilla() {
-			//Random r=new Random();
-			int nF=r.nextInt(8);	
-			int nC=r.nextInt(9);
-			
-			String id=sala[nF][nC].getId();
-			return id;
-		}
-		
+	
 		
 	public void llenarSala(Espectador espectador) {
 			
-		
+			int respuesta=0;
+			
 			for(int i=0;i<FILA;i++) {
 				for(int j=0;j<COL;j++) {
 					
@@ -150,15 +139,25 @@ public class Cine {
 							esp=new Espectador();
 							espArray.add(esp);
 							sala[i][j].setOcupado(true);
-							
+							respuesta=1;
 						}else {
-							vista.noPuestos();
+							respuesta=2;
 						}
 					}else {
-						vista.noCumpleRequisitos();
+						respuesta=3;
 					}
 				}
 				
+			}
+			
+			if(respuesta==1) {
+				System.out.println("Cliente sentado");
+			}else if(respuesta==2) {
+				vista.noPuestos();
+			}else if(respuesta==3) {
+				vista.noCumpleRequisitos();
+			}else {
+				System.out.println("hola");
 			}
 	}
 	
@@ -168,8 +167,11 @@ public class Cine {
 		
 		for (int i=0; i<FILA; i++) {
 			for (int j = 0; j <COL; j++) {
+				
 				if(getSala()[i][j].isOcupado()) {
 					System.out.println("Asiento: "+getSala()[i][j].getId()+" Esta ocupado");
+				}else {
+					System.out.println("Asiento: "+getSala()[i][j].getId()+" Esta libre");
 				}
 			}
 		}

@@ -12,7 +12,7 @@ public class Espectador {
 	private String nombres[]= {"Jose","Nicol","Miroslav","Toni","Juan","Valentina","Orlando","Susana","Pedro","Noelia","Carlos","Paola","Lina","Ivan","Jhon"};
 	private int edad;
 	private String nombre;
-	private double cantDinero;
+	private int cantDinero;
 	private String puesto;
 	
 	
@@ -51,11 +51,11 @@ public class Espectador {
 		this.edad = edad;
 	}
 
-	public double getCantDinero() {
+	public int getCantDinero() {
 		return cantDinero;
 	}
 
-	public void setCantDinero(double cantDinero) {
+	public void setCantDinero(int cantDinero) {
 		this.cantDinero = cantDinero;
 	}
 
