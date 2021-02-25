@@ -1,7 +1,7 @@
 package vista;
 
 import javax.swing.JOptionPane;
-
+/*Autor: Nicol Dayana Arias Lebro*/
 public class Vista {
 	
 	/*public void imprimirSala() {
@@ -13,6 +13,9 @@ public class Vista {
 		}
 	}*/
 	
+	public Vista() {
+		
+	}
 	public void noCumpleRequisitos() {
 		JOptionPane.showMessageDialog(null, "No cumple con los requisitos");
 	}
@@ -21,5 +24,14 @@ public class Vista {
 	
 	public void noPuestos() {
 		JOptionPane.showMessageDialog(null, "No se encuentran puestos disponibles");
+	}
+	
+	public void imprimirEspectadores(String cadena) {
+		System.out.println(cadena );
+	}
+	
+	public void imprimirSala(String cadena) {
+		
+		System.out.println(cadena);
 	}
 }

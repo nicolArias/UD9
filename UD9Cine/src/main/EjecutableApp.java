@@ -2,7 +2,8 @@ package main;
 
 import modelo.Cine;
 import modelo.Espectador;
-
+import vista.Vista;
+/*Autor: Nicol Dayana Arias Lebro*/
 public class EjecutableApp {
 
 	public static void main(String[] args) {
@@ -15,6 +16,12 @@ public class EjecutableApp {
 		cine.llenarSala(esp);
 		
 		cine.imprimirSala();
+		
+		Vista view=new Vista();
+		
+		view.imprimirEspectadores(cine.imprimirListaEsp());
+		
+		view.imprimirSala(cine.imprimirSala());
 	}
 
 }

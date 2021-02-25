@@ -1,5 +1,5 @@
 package modelo;
-
+/*Autor: Nicol Dayana Arias Lebro*/
 public class Asiento {
 	
 	
