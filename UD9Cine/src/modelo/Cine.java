@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import vista.Vista;
-
+/*Autor: Nicol Dayana Arias Lebro*/
 public class Cine {
 	
 		//Constantes

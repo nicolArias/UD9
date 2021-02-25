@@ -1,7 +1,7 @@
 package modelo;
 
 import java.util.Random;
-
+/*Autor: Nicol Dayana Arias Lebro*/
 public class Espectador {
 	//ATRIBUTOS 
 	//EDAD ALEATORIA
