@@ -1,15 +1,23 @@
 package objetos;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Moto extends Vehiculo {
 
+
 	
-	public Moto() {
-		super();
+	public Moto(String placa, String marca, String color) {
+		super(placa, marca, color);
 	}
 	
-	public Moto(String matricula, String marca, String color,String marcaD,String marcaT,double dD,double dT,Titular titular,ArrayList<Conductor> conductores) {
-		super(matricula, marca, color,marcaD,marcaT,dD,dT,titular,conductores);
+	public void addRuedas(List<Ruedas> ruedaFrontal, List<Ruedas> ruedaTrasera) throws Exception {
+		Ruedas rueda_F = ruedaFrontal.get(0);
+		Ruedas rueda_T = ruedaTrasera.get(0);
+
+	
+		this.ruedas.add(rueda_F);
+		this.ruedas.add(rueda_T);
+		
 	}
+	
 }

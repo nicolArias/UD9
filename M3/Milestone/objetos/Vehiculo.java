@@ -1,46 +1,33 @@
 package objetos;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Vehiculo {
 	
 	//Atributos
-	protected String matricula;
+	protected String placa;
 	protected String marca;
 	protected String color;
-	protected String marcaD;
-	protected String marcaT;
-	protected double diametroD;
-	protected double diametroT;
+	protected List<Ruedas> ruedas=new ArrayList<Ruedas>();
 	protected Titular titular;
 	protected ArrayList<Conductor> lstConductores;
-	
-	public Vehiculo() {
-		
-	}
-	
-	public Vehiculo(String matricula,String marca,String color,String marcaD,String marcaT,double dD,double dT,Titular titular,ArrayList<Conductor> conductores) {
-		this.matricula=matricula;
+
+	public Vehiculo(String placa,String marca,String color) {
+		this.placa=placa;
 		this.marca=marca;
 		this.color=color;
-		this.marcaD=marcaD;
-		this.marcaT=marcaT;
-		this.diametroD=dD;
-		this.titular=titular;
-		this.lstConductores=conductores;
-		this.diametroT=dT;
+
 	}
 
 	
 	//METODOS GET Y SET
-
-
-	public String getMatricula() {
-		return matricula;
+	public String getPlaca() {
+		return placa;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 
 	public String getMarca() {
@@ -59,37 +46,6 @@ public class Vehiculo {
 		this.color = color;
 	}
 
-	public String getMarcaD() {
-		return marcaD;
-	}
-
-	public void setMarcaD(String marcaD) {
-		this.marcaD = marcaD;
-	}
-
-	public String getMarcaT() {
-		return marcaT;
-	}
-
-	public void setMarcaT(String marcaT) {
-		this.marcaT = marcaT;
-	}
-
-	public double getDiametroD() {
-		return diametroD;
-	}
-
-	public void setDiametroD(double diametroD) {
-		this.diametroD = diametroD;
-	}
-
-	public double getDiametroT() {
-		return diametroT;
-	}
-
-	public void setDiametroT(double diametroT) {
-		this.diametroT = diametroT;
-	}
 	
 	
 
@@ -111,7 +67,7 @@ public class Vehiculo {
 
 	//La matricula debe tener 4 y 2 o 3 letras
 	public boolean comprobarMatricula() {
-		char[] cadenaMatricula=getMatricula().toCharArray();
+		char[] cadenaMatricula=getPlaca().toCharArray();
 		
 		String num="";
 		String letra="";
@@ -141,9 +97,9 @@ public class Vehiculo {
 	public boolean comprobarDiametro() {
 		boolean respuesta=false;
 		
-		if(getDiametroD()>0.4 && getDiametroD()<4 && getDiametroT()>0.4 && getDiametroT()<4) {
+		/*if(getDiametroD()>0.4 && getDiametroD()<4 && getDiametroT()>0.4 && getDiametroT()<4) {
 			respuesta=true;
-		}
+		}*/
 		return respuesta;
 	}
 	

@@ -31,7 +31,7 @@ public class Senior extends Empleados {
 				snetoM=this.getsBrutMensual()+(this.getsBrutMensual()*0.5);
 				
 				//Reducir el 24% del sueldo neto
-				snetoA=snetoM-(snetoM*0.24);
+				snetoA=snetoM-(snetoM*0.76);
 				this.sNetMensual=snetoA/12;
 				this.sNetAnual=snetoA;
 				

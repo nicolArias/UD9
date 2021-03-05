@@ -1,16 +1,32 @@
 package objetos;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Coche extends Vehiculo {
 
-	
-	public Coche() {
-		super();
+
+	public Coche(String placa,String marca, String color){
+		super(placa, marca, color);
 	}
 	
-	public Coche(String matricula,String marca, String color,String marcaD,String marcaT,double dD,double dT,Titular titular,ArrayList<Conductor> conductores){
-		super(matricula, marca, color, marcaD, marcaT,dD,dT,titular,conductores);
+	public void addRuedas(List<Ruedas> ruedasFrontales, List<Ruedas> ruedasTraseras) throws Exception {
+		add_DosRuedas(ruedasFrontales);
+		add_DosRuedas(ruedasTraseras);
 	}
+
+	public void add_DosRuedas(List<Ruedas> ruedas) throws Exception {
+		if (ruedas.size() != 2)
+			throw new Exception();
+
+		Ruedas ruedaDerecha = ruedas.get(0);
+		Ruedas ruedaIzquierda = ruedas.get(1);
+
+		if (!ruedaDerecha.equals(ruedaIzquierda))
+			throw new Exception();
+
+		this.ruedas.add(ruedaDerecha);
+		this.ruedas.add(ruedaIzquierda);
+	}
+	
 	
 }

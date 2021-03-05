@@ -8,16 +8,17 @@ public class VistaVehiculos {
 		
 	}
 	
-	public String menu() {
+	public String menuVehiculos() {
 		String menu=JOptionPane.showInputDialog("Elija que vehiculo desea crear:"+
 												"\n1. Coche"+
-												"\n2. Moto");
+												"\n2. Moto"+
+												"\n3. Camion");
 		
 		return menu;
 	}
 	
-	public String matricula() {
-		String mat=JOptionPane.showInputDialog("Introduzca la matricula del  vehiculo");
+	public String placa() {
+		String mat=JOptionPane.showInputDialog("Introduzca la placa del  vehiculo");
 		return mat;
 	}
 	
@@ -32,22 +33,22 @@ public class VistaVehiculos {
 	}
 	
 	public String marcaD() {
-		String marcaD=JOptionPane.showInputDialog("Introduzca la marca de las llantas delanteras");
+		String marcaD=JOptionPane.showInputDialog("Introduzca la marca de la llanta delantera");
 		return marcaD;
 	}
 	
 	public String marcaT() {
-		String marcaT=JOptionPane.showInputDialog("Introduzca la marca de las llantas traseras");
+		String marcaT=JOptionPane.showInputDialog("Introduzca la marca de la llanta trasera");
 		return marcaT;
 	}
 	
-	public double diametroD() {
-		double diametroD=Double.parseDouble("Introduzca el diametro de las llantas delanteras");
+	public String diametroD() {
+		String diametroD=JOptionPane.showInputDialog("Introduzca el diametro de la llanta delantera");
 		return diametroD;
 	}
 	
-	public double diametroT() {
-		double diametroT=Double.parseDouble("Introduzca el diametro de las llantas traseras");
+	public String diametroT() {
+		String diametroT=JOptionPane.showInputDialog("Introduzca el diametro de la llantas trasera");
 		return diametroT;
 	}
 	

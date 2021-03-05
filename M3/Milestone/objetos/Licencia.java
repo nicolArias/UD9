@@ -20,6 +20,8 @@ public class Licencia {
 		this.fechaCaducidad=fechaCaducidad;
 	}
 	
+	/*Comprueba si el tipo de licencia que ingreso el usuario se encuentra en el arreglo
+	de licencias que ya estan definidas*/
 	public boolean comprobarTipo() {
 		boolean resp=false;
 		for(int i=0;i<tLicencia.length;i++) {

@@ -12,7 +12,7 @@ public class Persona {
 		this.nombre="";
 		this.apellidos="";
 		this.fechaNacimiento="";
-		this.licencia=new Licencia();
+		
 	}
 	
 	public Persona(String nombre, String apellidos,String fechaNac,Licencia licencia){
