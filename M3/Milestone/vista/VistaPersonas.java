@@ -14,6 +14,16 @@ public class VistaPersonas {
 		return opcion;
 	}
 	
+	//Metodo para preguntar al usuario si desea agregar otro usuario
+	public String addUsuario() {
+		String addUsuario=JOptionPane.showInputDialog("Elija opcion:"
+														+ "\nAñadir usuario (1)"
+														+ "\n Atrás (2)");
+		
+		return addUsuario;
+	}
+	
+	
 	//Método para solicitar datos de persona (tambien para titular y conductor)
 	public String datosUsuarios() {
 		String nombre;
@@ -41,10 +51,10 @@ public class VistaPersonas {
 		String nomComplet;
 		String fCaducidad;
 		
-		id=JOptionPane.showInputDialog("Ingrese el ID:");
-		tipoLicencia=JOptionPane.showInputDialog("Tipo de licencia:");
-		nomComplet=JOptionPane.showInputDialog("Nombre completo:");
-		fCaducidad=JOptionPane.showInputDialog("Fecha caducidad (aaaa/mm/dd):");
+		id=JOptionPane.showInputDialog("Datos Licencia\n Ingrese el ID:");
+		tipoLicencia=JOptionPane.showInputDialog("Datos Licencia\n Tipo de licencia:");
+		nomComplet=JOptionPane.showInputDialog("Datos Licencia\n Nombre completo:");
+		fCaducidad=JOptionPane.showInputDialog("Datos Licencia\n Fecha caducidad (aaaa/mm/dd):");
 		
 		return id+"/"+tipoLicencia+"/"+nomComplet+"/"+fCaducidad;
 	

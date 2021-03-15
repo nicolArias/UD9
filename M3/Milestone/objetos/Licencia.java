@@ -2,7 +2,6 @@ package objetos;
 
 public class Licencia {
 	
-	String tLicencia[]= {"A1","A2","A","B","C1","C2"};
 	
 	protected String ID;
 	protected String tipoLicencia;
@@ -20,16 +19,40 @@ public class Licencia {
 		this.fechaCaducidad=fechaCaducidad;
 	}
 	
-	/*Comprueba si el tipo de licencia que ingreso el usuario se encuentra en el arreglo
-	de licencias que ya estan definidas*/
-	public boolean comprobarTipo() {
-		boolean resp=false;
-		for(int i=0;i<tLicencia.length;i++) {
-			if(this.tipoLicencia.equalsIgnoreCase(tipoLicencia)) {
-				return resp=true;
-			}
-		}
-		
-		return resp;
+	//Get y set
+
+	public String getID() {
+		return ID;
 	}
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public String getTipoLicencia() {
+		return tipoLicencia;
+	}
+
+	public void setTipoLicencia(String tipoLicencia) {
+		this.tipoLicencia = tipoLicencia;
+	}
+
+	public String getNombreCompleto() {
+		return nombreCompleto;
+	}
+
+	public void setNombreCompleto(String nombreCompleto) {
+		this.nombreCompleto = nombreCompleto;
+	}
+
+	public String getFechaCaducidad() {
+		return fechaCaducidad;
+	}
+
+	public void setFechaCaducidad(String fechaCaducidad) {
+		this.fechaCaducidad = fechaCaducidad;
+	}
+	
+	
+	
 }

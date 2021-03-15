@@ -13,11 +13,14 @@ public class Vehiculo {
 	protected Titular titular;
 	protected ArrayList<Conductor> lstConductores;
 
+	public Vehiculo() {
+
+	}
+	
 	public Vehiculo(String placa,String marca,String color) {
 		this.placa=placa;
 		this.marca=marca;
-		this.color=color;
-
+		this.color=color; 
 	}
 
 	
@@ -57,7 +60,7 @@ public class Vehiculo {
 		this.titular = titular;
 	}
 
-	public ArrayList<Conductor> getLstConductores() {
+	public List<Conductor> getLstConductores() {
 		return lstConductores;
 	}
 
@@ -65,43 +68,14 @@ public class Vehiculo {
 		this.lstConductores = lstConductores;
 	}
 
-	//La matricula debe tener 4 y 2 o 3 letras
-	public boolean comprobarMatricula() {
-		char[] cadenaMatricula=getPlaca().toCharArray();
-		
-		String num="";
-		String letra="";
-		int cont=0;
-		boolean respuesta=false;
-		
-		for(int i=0;i<cadenaMatricula.length;i++) {
-			if(Character.isDigit(cadenaMatricula[i])) {
-				num+=cadenaMatricula[i];
-				cont++;
-			}else {
-				letra+=cadenaMatricula[i];
-			}
-		}
-		
-		if(num.length()==4 && letra.length()==3 || letra.length()==2) {
-			respuesta=true;
-		}else {
-			respuesta=false;
-		}
-		
-		return respuesta;
+	
+
+	public List<Ruedas> getRuedas() {
+		return ruedas;
 	}
-	
-	
-	//El diametro de las ruedas deben ser superio a 0.4 e inferior a 4
-	public boolean comprobarDiametro() {
-		boolean respuesta=false;
-		
-		/*if(getDiametroD()>0.4 && getDiametroD()<4 && getDiametroT()>0.4 && getDiametroT()<4) {
-			respuesta=true;
-		}*/
-		return respuesta;
+
+	public void setRuedas(List<Ruedas> ruedas) {
+		this.ruedas = ruedas;
 	}
-	
-	
+
 }
