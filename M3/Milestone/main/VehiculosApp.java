@@ -9,6 +9,7 @@ import objetos.Coche;
 import objetos.Conductor;
 import objetos.Moto;
 import objetos.Titular;
+import vista.VistaGeneral;
 
 
 public class VehiculosApp {
@@ -18,15 +19,26 @@ public class VehiculosApp {
 		Controlador controller = new Controlador();
 		ArrayList lstPV = new ArrayList<>();
 		Object ob1 = new Object();
-
+		VistaGeneral vg=new VistaGeneral();
+		
 		try {
+			int op2=0;
 			do {
-				ob1 = controller.menuGeneral();
-				if(ob1!=null) {
+			
+				/*Preguntara al usuario la opcion que desee, si quiere crear un vehiculo o un usuario*/
+				int opcion = Integer.parseInt(vg.menuGeneral());
+
+				if (opcion == 1) {// Opcion para crear usuario
+					ob1=controller.menuUsuarios();
 					lstPV.add(ob1);
+				} else if (opcion == 2) {// Opcion para crear vehiculo
+					ob1=controller.menuVehiculos();
+					lstPV.add(ob1);
+				}else if(opcion==3) {
+					op2=3;
 				}
-				
-			} while (ob1 != null);
+
+			} while (op2!=3);
 			
 		} catch (NullPointerException | NumberFormatException e) {
 			System.out.println("Objeto Vacio" +e);

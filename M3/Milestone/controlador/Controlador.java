@@ -40,27 +40,6 @@ public class Controlador {
 	protected List<Ruedas> lstRuedasT=new ArrayList<Ruedas>();
 	
 	
-	public Object menuGeneral() {
-		/*
-		 * Preguntara al usuario la opcion que desee, si quiere crear un vehiculo o un
-		 * usuario
-		 */
-		Object objeto=new Object();
-		
-			int opcion = Integer.parseInt(vg.menuGeneral());
-
-			if (opcion == 1) {// Opcion para crear usuario
-				objeto=menuUsuarios();
-			} else if (opcion == 2) {// Opcion para crear vehiculo
-				objeto=menuVehiculos();
-			}else if(opcion==3){//Salir de la aplicacion
-				objeto=null;
-			}
-			
-		
-		return objeto;
-	}
-
 	// Menú del usuario, donde tendra la opcion de esc
 	public Object menuUsuarios() {
 	
@@ -255,13 +234,13 @@ public class Controlador {
 
 		return objeto;
 	}
-	//La matricula debe tener 4 y 2 o 3 letras
+	//La matricula debe tener 4 numeros y 2 o 3 letras
 		public boolean comprobarPlaca(String placa) {
 			char[] cadenaMatricula=placa.toCharArray();
 			
 			String num="";
 			String letra="";
-			int cont=0;
+			int cont=0; 
 			boolean respuesta=false;
 			
 			for(int i=0;i<cadenaMatricula.length;i++) {
@@ -281,6 +260,7 @@ public class Controlador {
 			
 			return respuesta;
 		}
+		
 	public Coche crearCoche() {
 		String placa = vv.placa();
 		String color = vv.color();
@@ -288,6 +268,7 @@ public class Controlador {
 		
 		boolean resp=comprobarPlaca(placa);
 		
+
 		if(resp==true) {
 			// Creamos un objeto coche
 			Coche coche = new Coche(placa, color, marca);
@@ -297,10 +278,15 @@ public class Controlador {
 			 * parametro 1 que indica que es un coche
 			 */
 			addRuedas("1",coche);
-		}
-		
 
-		return coche;
+			return coche;
+			
+		}else {
+			System.out.println("La matricula es incorrecta, no cumple con el formatos");
+
+			return crearCoche();
+		}
+
 	}
 
 	public Moto crearMoto() {
@@ -382,6 +368,8 @@ public class Controlador {
 					System.out.println("entro");
 					((Moto) ob).addRuedas(lstRuedasD, lstRuedasT);
 				}
+			}else {
+				System.out.println("Valide que esta ingresando bien el diametro de las ruedas");
 			}
 			
 		} catch (NullPointerException ne) {
